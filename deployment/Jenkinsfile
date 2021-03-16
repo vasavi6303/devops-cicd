@@ -1,7 +1,7 @@
 node {
    def mvnHome
    stage('Prepare') {
-      git url: 'https://github.com/krishnamurthypradeep/springboot-devops.git', branch: 'develop'
+      git url: 'https://github.com/krishnamurthypradeep/devops-cicd.git', branch: 'master'
       mvnHome = tool 'maven'
    }
 
