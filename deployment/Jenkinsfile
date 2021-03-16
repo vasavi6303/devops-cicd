@@ -1,26 +1,17 @@
-pipeline {
-    agent any
-    tools {
-        maven 'Maven 3.5.2'
-    }
-    stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
-        }
+node {
+   def mvnHome
+   stage('Prepare') {
+      git url: 'https://github.com/krishnamurthypradeep/springboot-devops.git', branch: 'develop'
+      mvnHome = tool 'maven'
+   }
 
-           stage('Build') {
+    stage('Build') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-   
    
 
         
@@ -56,4 +47,4 @@ pipeline {
             }
         }
     }
-}
+
