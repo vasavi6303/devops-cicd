@@ -1,13 +1,13 @@
-package com.myapp.spring;
+package com.myapp.spring.tdd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DevopsCicdApplication {
+public class SpringBootTddJunitApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DevopsCicdApplication.class, args);
+		SpringApplication.run(SpringBootTddJunitApplication.class, args);
 	}
 
 }
