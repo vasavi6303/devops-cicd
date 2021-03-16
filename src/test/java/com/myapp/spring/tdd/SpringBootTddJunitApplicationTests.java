@@ -1,10 +1,10 @@
-package com.myapp.spring;
+package com.myapp.spring.tdd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DevopsCicdApplicationTests {
+class SpringBootTddJunitApplicationTests {
 
 	@Test
 	void contextLoads() {
